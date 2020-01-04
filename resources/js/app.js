@@ -1,4 +1,6 @@
+import '../styles/global.scss';
 import fetchHoroscope from "./fetcher";
+
 const txtHoroscope = document.querySelector("#horoskop");
 
 const generate = () => fetchHoroscope().then(horoscope => {

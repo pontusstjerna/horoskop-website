@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    // TODO: Please use different colors haha
+    background-color: #f8b195;
+    color: #6c567b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Varela Round', sans-serif;
+}
+
+#horoskop {
+    font-size: 1.5rem;
+    margin: 0 20px 0 20px;
+
+    @media (min-width: 800px ) {
+        margin: 0 100px 0 100px;
+    }
+}
+
+#btn-generate {
+    position: absolute;
+    bottom: 100px;
+    color: #6c567b;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: 1px solid #6c567b;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    transition: .2s ease;
+
+    &:hover {
+        background-color: #6c567b;
+        color: #f8b195;
+    }
+}

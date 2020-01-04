@@ -13,8 +13,7 @@ module.exports = {
         publicPath: '/dist/'
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.m?js$/, // this is the regex
                 exclude: /(node_modules)/,
                 use: {
@@ -23,7 +22,13 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
-            }
-        ]
+            }, {
+                test: /\.s(a|c)ss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+        }]
     }
 };
