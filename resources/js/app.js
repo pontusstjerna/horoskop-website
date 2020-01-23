@@ -1,14 +1,38 @@
-import '../styles/global.scss';
+import "../styles/global.scss";
 import fetchHoroscope from "./fetcher";
+import nightSky from './night-sky'
+import { format } from "date-fns";
+import { sv } from "date-fns/locale";
 
 const txtHoroscope = document.querySelector("#horoskop");
 
-const generate = () => fetchHoroscope().then(horoscope => {
-    txtHoroscope.innerHTML = horoscope;
-});
+const generate = () => {
+	txtHoroscope.innerHTML = "Laddar...";
+	fetchHoroscope().then(horoscope => {
+		txtHoroscope.innerHTML = horoscope;
+	});
+};
 
-window.onload = generate;
 document.querySelector("#btn-generate").onclick = () => {
-    txtHoroscope.innerHTML = "Laddar...";
-    generate();
+	generate();
+};
+
+const init = () => {
+	nightSky();
+	document.querySelector(".header").innerHTML = header();
+};
+
+const header = () =>
+	capitalizeFirst(
+		format(new Date(), "cccc", {
+			locale: sv
+		})
+	) + "ens horoskop";
+
+const capitalizeFirst = input =>
+	input.charAt(0).toUpperCase() + input.substring(1);
+
+window.onload = () => {
+	init();
+	generate();
 };
