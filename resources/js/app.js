@@ -7,7 +7,7 @@ import { sv } from "date-fns/locale";
 const txtHoroscope = document.querySelector("#horoskop");
 
 const generate = () => {
-	txtHoroscope.innerHTML = "Laddar...";
+	txtHoroscope.innerHTML = "Spår...";
 	fetchHoroscope().then(horoscope => {
 		txtHoroscope.innerHTML = horoscope;
 	});

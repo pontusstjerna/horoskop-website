@@ -1,5 +1,5 @@
 import fetch from "unfetch";
-const URL = 'http://192.168.0.61:3000';
+const URL = '/api';
 const wordCount = 100;
 
 export default () => fetch(`${URL}?wordCount=${wordCount}`, {
